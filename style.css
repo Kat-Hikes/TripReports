@@ -1,0 +1,197 @@
+
+:root,
+[data-bs-theme=light] {
+  --heading-font: "Roboto", Verdana, serif;
+  --heading-font-weight: 700;
+  --heading-color: var(--bs-dark);
+  --heading-line-height: 1.2;
+
+  /* theme colors */
+  --bs-body-font-family: "Roboto", Verdana, sans-serif;
+  --bs-body-font-size: 0.9rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.7;
+  --bs-body-color: #333;
+  --bs-body-color-rgb: 51, 51, 51;
+
+  --bs-primary: #FF534A;
+  --bs-primary-dark: #d33a32;
+  --bs-secondary: #FDEEE9;
+  --bs-black: #111;
+  --bs-light: #F1F1F0;
+  --bs-dark: #212529;
+  --bs-gray: #949494;
+  --bs-gray-dark: #51565b;
+
+  --bs-primary-rgb: 255, 83, 74;
+  --bs-secondary-rgb: 253, 238, 233;
+  --bs-black-rgb: 17, 17, 17;
+  --bs-light-rgb: 241, 241, 240;
+  --bs-dark-rgb: 33, 37, 41;
+
+  --bs-link-color: var(--bs-dark);
+  --bs-link-color-rgb: 17, 17, 17;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: var(--bs-primary);
+  --bs-link-hover-color-rgb: 169, 128, 115;
+
+  --bs-gutter-x: 2.5rem;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  /* spacing */
+  --bs-gutter-x: 2.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+  line-height: var(--heading-line-height);
+  color: var(--heading-color);
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+
+/* list group */
+.list-group-item {
+  --bs-list-group-item-padding-x: 0;
+  --bs-list-group-border-width: 0;
+}
+
+/* text white */
+.text-white {
+  --heading-color: var(--bs-light);
+  --bs-breadcrumb-item-active-color: var(--bs-light);
+  --bs-breadcrumb-divider-color: var(--bs-light);
+  --bs-link-color-rgb: var(--bs-light-rgb);
+  --bs-link-hover-color-rgb: var(--bs-light-rgb);
+}
+
+.text-white .nav-link {
+  --bs-nav-link-color: var(--bs-light);
+  --bs-nav-link-hover-color: var(--bs-light);
+  --bs-nav-link-active-color: var(--bs-light);
+  --bs-navbar-active-color: var(--bs-light);
+}
+
+
+/* form control */
+.form-control:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 0 0.25rem rgba(200, 200, 200, .25);
+}
+
+/* end of Bootstrap Color Theme */
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1440px;
+  }
+}
+
+
+/* extra classes */
+.display-xl {
+  font-size: calc(3rem + 8.5vw);
+  font-weight: var(--heading-font-weight);
+  letter-spacing: -0.06em;
+  line-height: var(--heading-line-height);
+}
+
+/* Text Effects */
+.txt-fx {
+  overflow: hidden;
+  line-height: var(--heading-line-height);
+}
+.txt-fx.zoom {
+  overflow: visible;
+}
+
+.txt-fx .word {
+  overflow: hidden;
+  transform-origin: 0 100%;
+  display: inline-block;
+  /* line-height: 1em; */
+}
+.txt-fx .letter {
+  transform-origin: 0 100%;
+  display: inline-block;
+  /* line-height: 1em; */
+}
+
+.txt-fx {
+  --delay: 50ms;
+  --easing: cubic-bezier(.5, 0, .53, 1);
+}
+
+/* fade right */
+.txt-fx.fade-right .letter {
+  transform: translate3d(-50px, 0, 0);
+  opacity: 0;
+  transition: transform 0.6s var(--easing), opacity 0.6s var(--easing);
+}
+
+.aos-animate .txt-fx.fade-right .letter {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* slide up */
+.txt-fx.slide-up .letter {
+  transform: translate3d(0, 1.2em, 0);
+  transition: transform 0.9s var(--easing);
+}
+
+.swiper-slide-active .txt-fx.slide-up .letter,
+.aos-animate .txt-fx.slide-up .letter {
+  transform: translate3d(0, 0, 0);
+}
+
+/* domino */
+.txt-fx.domino .letter {
+  transform-origin: 50% 0;
+  transform: rotateY(90deg);
+  transition: transform 0.9s var(--easing);
+}
+
+.swiper-slide-active .txt-fx.domino .letter,
+.aos-animate .txt-fx.domino .letter {
+  transform: rotateY(0);
+}
+
+/* zoom */
+.txt-fx.zoom .letter {
+  transform-origin: 50% 0;
+  transform: scale(3);
+  transition: transform 0.9s var(--easing);
+}
+
+.swiper-slide-active .txt-fx.zoom .letter,
+.aos-animate .txt-fx.zoom .letter {
+  transform: scale(1);
+}
